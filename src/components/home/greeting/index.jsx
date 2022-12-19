@@ -1,4 +1,6 @@
 import {Component} from "react";
+import React from "react";
+import Typography from '@mui/material/Typography';
 
 class Greeting extends Component{
     constructor(props) {
@@ -18,3 +20,5 @@ class Greeting extends Component{
         )
     }
 }
+
+export default Greeting;

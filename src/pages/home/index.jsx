@@ -1,4 +1,6 @@
 import {Component} from "react";
+import React from "react";
+import Greeting from "../../components/home/greeting";
 
 class HomePage extends Component {
     constructor(props) {
@@ -7,11 +9,7 @@ class HomePage extends Component {
 
     render(){
         return(
-            <div>
-                <h1>Hello From HomePage</h1>
-                <h2>This is my first application with {this.props.name}</h2>
-                <h3>I love {this.props.type} Development</h3>
-            </div>
+           <Greeting/>
         )
     }
 }
