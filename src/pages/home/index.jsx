@@ -9,7 +9,7 @@ class HomePage extends Component {
 
     render(){
         return(
-           <Greeting/>
+           <Greeting name="World"/>
         )
     }
 }

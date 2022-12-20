@@ -1,6 +1,7 @@
 import {Component} from "react";
 import React from "react";
 import Typography from '@mui/material/Typography';
+import UOM from '../../../assets/imgs/UOM.jpeg';
 
 class Greeting extends Component{
     constructor(props) {
@@ -11,11 +12,11 @@ class Greeting extends Component{
         return(
             <div>
                 <div>
-                    <Typography variant="h3" gutterBottom>
-                        Hello World!
-                    </Typography>
+                    <h1>Hello {this.props.name}!</h1>
                 </div>
-                <div></div>
+                <div>
+                    <img src={UOM} alt="www.uom.lk"/>
+                </div>
             </div>
         )
     }
