@@ -1,7 +1,9 @@
 import {Component} from "react";
 import React from "react";
-import Typography from '@mui/material/Typography';
+import {Typography} from "@mui/material";
 import UOM from '../../../assets/imgs/UOM.jpeg';
+import {styleSheet} from "./styles";
+import {withStyles} from "@mui/styles";
 
 class Greeting extends Component{
     constructor(props) {
@@ -9,10 +11,13 @@ class Greeting extends Component{
     }
 
     render(){
+        const {classes} = this.props;
         return(
-            <div>
+            <div className={classes.container}>
                 <div>
-                    <h1>Hello {this.props.name}!</h1>
+                    <Typography variant="h3" gutterBottom>
+                        Hello {this.props.name}
+                    </Typography>
                 </div>
                 <div>
                     <img src={UOM} alt="www.uom.lk"/>
@@ -22,4 +27,4 @@ class Greeting extends Component{
     }
 }
 
-export default Greeting;
+export default withStyles(styleSheet) (Greeting);

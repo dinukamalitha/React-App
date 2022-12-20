@@ -1,6 +1,7 @@
-import {Component} from "react";
+import {Component, Fragment} from "react";
 import React from "react";
 import Greeting from "../../components/home/greeting";
+import Counter from "../../components/home/counter";
 
 class HomePage extends Component {
     constructor(props) {
@@ -9,7 +10,10 @@ class HomePage extends Component {
 
     render(){
         return(
-           <Greeting name="World"/>
+            <Fragment>
+                <Greeting name="World"/>
+                <Counter/>
+            </Fragment>
         )
     }
 }
