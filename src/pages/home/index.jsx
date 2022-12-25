@@ -15,11 +15,6 @@ class HomePage extends Component {
                 <Greeting name="World"/>
                 <Divider light />
                 <Counter/>
-                <Button variant="contained" onClick={()=>{
-                    console.log("Button Clicked!");
-                }}>
-                    Contained
-                </Button>
             </Fragment>
         )
     }
