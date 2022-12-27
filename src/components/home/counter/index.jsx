@@ -1,6 +1,7 @@
 import {Component} from "react";
 import React from "react";
-import {Button, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
+import MyButton from "../../common/button";
 
 class Counter extends Component{
     constructor(props) {
@@ -38,26 +39,61 @@ class Counter extends Component{
                     Count : {this.state.count}
                 </Typography>
 
-                <Button variant="contained" onClick={()=>{
-                    //alert("Hi, there!");
-                    this.increment();
-                }}>
+                {/*<Button variant="contained" onClick={()=>{*/}
+                {/*    //alert("Hi, there!");*/}
+                {/*    this.increment();*/}
+                {/*}}>*/}
+                {/*    Increase*/}
+                {/*</Button>*/}
+
+                {/*<Button variant="contained" color="success" onClick={()=>{*/}
+                {/*    //alert("Hi, there!");*/}
+                {/*    this.decrement();*/}
+                {/*}}*/}
+                {/*        style={{marginLeft : '20px'}}*/}
+                {/*>*/}
+                {/*    Decrease*/}
+                {/*</Button>*/}
+
+                {/*<Button variant="contained" color="error" onClick={()=>{*/}
+                {/*    //alert("Hi, there!");*/}
+                {/*    this.reset();*/}
+                {/*}}*/}
+                {/*        style={{marginLeft : '20px'}}*/}
+                {/*>*/}
+                {/*    Reset*/}
+                {/*</Button>*/}
+
+                <MyButton
+                    variant = "contained"
+                    onClick={()=>{
+                        this.increment();
+                    }}
+                >
                     Increase
-                </Button>
+                </MyButton>
 
-                <Button variant="contained" onClick={()=>{
-                    //alert("Hi, there!");
-                    this.decrement();
-                }}>
+                <MyButton
+                    variant = "contained"
+                    color = "success"
+                    style = {{marginLeft : '20px'}}
+                    onClick={()=>{
+                        this.decrement();
+                    }}
+                >
                     Decrease
-                </Button>
+                </MyButton>
 
-                <Button variant="contained" onClick={()=>{
-                    //alert("Hi, there!");
-                    this.reset();
-                }}>
+                <MyButton
+                    variant = "contained"
+                    color = "error"
+                    style = {{marginLeft : '20px'}}
+                    onClick={()=>{
+                        this.reset();
+                    }}
+                >
                     Reset
-                </Button>
+                </MyButton>
             </div>
         )
     }
