@@ -3,8 +3,8 @@ import React from "react";
 import {styleSheet} from "./style";
 import {withStyles} from "@mui/styles";
 import {TextField, Typography} from "@mui/material";
-import MyButton from "../../components/common/button";
-import SnackBar from "../../components/common/snackBar";
+import MyButton from "../../../components/common/button";
+import SnackBar from "../../../components/common/snackBar";
 
 class LoginPage extends Component{
     constructor(props) {

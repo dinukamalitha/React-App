@@ -1,11 +1,17 @@
 import React from "react";
-import HomePage from "../pages/home/index.jsx";
-import LoginPage from "../pages/login";
+import {Routes, Route} from "react-router-dom";
+import HomePage from "../pages/home";
+import LoginPage from "../pages/session/login";
+import NotFound from "../pages/session/notFound";
 
 function App() {
   return (
-    // <HomePage />
-      <LoginPage/>
+
+      <Routes>
+        <Route exact path='/' element={<HomePage/>}/>
+        <Route path='login' element={<LoginPage/>}/>
+        <Route path='*' element={<NotFound/>}/>
+      </Routes>
   );
 }
 
