@@ -3,6 +3,7 @@ import React from "react";
 import MyButton from "../../components/common/button";
 import {withStyles} from "@mui/styles";
 import error from "../../assets/imgs/error.jpeg";
+import {Link} from "react-router-dom";
 
 const styleSheet = () => ({
     container:{
@@ -34,14 +35,12 @@ class NotFound extends Component{
                     <img src={error} alt="error"/>
                 </div>
 
-                <link to="/">
-
+                <Link to="/">
                 <MyButton
                     variant="contained"
                     label="Back to HomePage"
                 />
-
-                </link>
+                </Link>
             </div>
         )
     }
