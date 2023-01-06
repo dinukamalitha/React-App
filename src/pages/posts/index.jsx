@@ -26,17 +26,25 @@ class Posts extends Component{
 
             //for table
             column: [
-                {field: 'userId', headerName: 'User Id', type: 'number', width: 70},
-                {field: 'id', headerName: 'Id', type: 'number', width: 130},
-                {field: 'title', headerName: 'Title', width: 130},
-                {field: 'body', headerName: 'Body', width: 130}
-            ]
+                {field: 'userId', headerName: 'User Id', type: 'number', width: 150},
+                {field: 'id', headerName: 'Id', type: 'number', width: 150},
+                {field: 'title', headerName: 'Title', width: 500},
+                {field: 'body', headerName: 'Body', width: 600}
+            ],
+
+            data:[],
+            loaded: false
         }
     }
 
     async loadData(){
         let res = await PostService.fetchPosts();
+        //console.log("row response:" + JSON.stringify(res));
         if (res.status === 200){
+            this.setState({
+                loaded: true,
+                data: res.data
+            })
             console.log("res:" + JSON.stringify(res));
         }
         else{
@@ -47,6 +55,8 @@ class Posts extends Component{
     componentDidMount() {
         console.log("Component Mounted");
         this.loadData();
+
+        console.log(this.state.data);
     }
 
     handleSubmit = async () =>{
@@ -160,15 +170,16 @@ class Posts extends Component{
                 </Grid>
                 </ValidatorForm>
 
-                <Grid container spacing={0.5}>
-                    {/*<DataGrid*/}
-                    {/*    // rows={rows}*/}
-                    {/*    columns={this.state.column}*/}
-                    {/*    pageSize={5}*/}
-                    {/*    rowsPerPageOptions={[5]}*/}
-                    {/*    checkboxSelection*/}
-                    {/*/>*/}
+                {this.state.loaded &&
+                <Grid container spacing={0.5} style={{ height: 400, width: '100%', marginTop: '50px' }}>
+                    <DataGrid
+                        rows={this.state.data}
+                        columns={this.state.column}
+                        pageSize={5}
+                        rowsPerPageOptions={[5]}
+                    />
                 </Grid>
+                }
 
                 <SnackBar
                     open={this.state.open}
