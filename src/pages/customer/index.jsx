@@ -5,6 +5,7 @@ import {withStyles} from "@mui/styles";
 import {AppBar, Autocomplete, Button, Grid, IconButton, TextField, Toolbar, Typography} from "@mui/material";
 import MyButton from "../../components/common/button";
 import {Link} from "react-router-dom";
+import MyTable from "../../components/common/table";
 
 class Customer extends Component{
     constructor(props) {
@@ -13,8 +14,19 @@ class Customer extends Component{
             gender: [
                 {label: 'Male'},
                 {label: 'Female'}
-            ]
+            ],
+
+            formData: {
+                customerName: '',
+                gender: '',
+                nic: '',
+                email: ''
+            },
         }
+    }
+
+    loadData(){
+
     }
 
     render() {
@@ -58,12 +70,16 @@ class Customer extends Component{
                         Customer Info:
                     </Typography>
                     <Grid container spacing={0.5}>
-                        <Grid item xs={6} md={6} xm={6} lg={6}>
+                        <Grid item xs={12} md={12} xm={6} lg={6}>
                             <Typography variant="body2"> Customer Name: </Typography>
-                            <TextField id="outlined-basic" label="" variant="outlined"
-                                       style={{width:'100%'}}/>
+                            <TextField
+                                id="outlined-basic"
+                                label=""
+                                variant="outlined"
+                                style={{width:'100%'}}
+                            />
                         </Grid>
-                        <Grid item xs={6} md={6} xm={6} lg={6}>
+                        <Grid item xs={12} md={12} xm={6} lg={6}>
                             <Typography variant="body2"> Gender: </Typography>
                             <Autocomplete
                                 disablePortal
@@ -74,15 +90,23 @@ class Customer extends Component{
                                 style={{width:'100%'}}
                             />
                         </Grid>
-                        <Grid item xs={6} md={6} xm={6} lg={6}>
+                        <Grid item xs={12} md={12} xm={6} lg={6}>
                             <Typography variant="body2"> NIC: </Typography>
-                            <TextField id="outlined-basic" label="" variant="outlined"
-                                       style={{width:'100%'}}/>
+                            <TextField
+                                id="outlined-basic"
+                                label=""
+                                variant="outlined"
+                                style={{width:'100%'}}
+                            />
                         </Grid>
-                        <Grid item xs={6} md={6} xm={6} lg={6}>
+                        <Grid item xs={12} md={12} xm={6} lg={6}>
                             <Typography variant="body2"> E-Mail: </Typography>
-                            <TextField id="outlined-basic" label="" variant="outlined"
-                                       style={{width:'100%'}}/>
+                            <TextField
+                                id="outlined-basic"
+                                label=""
+                                variant="outlined"
+                                style={{width:'100%'}}
+                            />
                         </Grid>
                         <Grid
                             item xs={12} md={12} xm={12} lg={12}
@@ -91,10 +115,25 @@ class Customer extends Component{
                             justifyContent="flex-end"
                             alignItems="center"
                         >
-                            <MyButton variant="contained" label="Save"/>
+                            <MyButton
+                                variant="contained"
+                                label="Save"
+                                onClick={() => {
+                                    this.loadData()
+                                }}
+                            />
                             <MyButton variant="contained" label="Clear" style={{margin:'10px'}}/>
                         </Grid>
                     </Grid>
+                </div>
+
+                <div className={classes.table}>
+                    {/*<MyTable*/}
+                    {/*    rows={""}*/}
+                    {/*    columns={""}*/}
+                    {/*    pageSize={5}*/}
+                    {/*    rowsPerPageOptions={[5]}*/}
+                    {/*/>*/}
                 </div>
             </div>
         )

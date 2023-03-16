@@ -7,6 +7,7 @@ import SnackBar from "../../components/common/snackBar";
 import postService from "../../services/postService";
 import PostService from "../../services/postService";
 import {DataGrid} from "@mui/x-data-grid";
+import MyTable from "../../components/common/table";
 
 class Posts extends Component{
     constructor(props) {
@@ -172,7 +173,7 @@ class Posts extends Component{
 
                 {this.state.loaded &&
                 <Grid container spacing={0.5} style={{ height: 400, width: '100%', marginTop: '50px' }}>
-                    <DataGrid
+                    <MyTable
                         rows={this.state.data}
                         columns={this.state.column}
                         pageSize={5}
